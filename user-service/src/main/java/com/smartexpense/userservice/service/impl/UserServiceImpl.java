@@ -4,6 +4,7 @@ import com.smartexpense.userservice.dto.LoginRequest;
 import com.smartexpense.userservice.dto.RegisterUserRequest;
 import com.smartexpense.userservice.entity.User;
 import com.smartexpense.userservice.repository.UserRepository;
+import com.smartexpense.userservice.security.JwtUtil;
 import com.smartexpense.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,6 +18,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
 
     public User registerUser(RegisterUserRequest request) {
 
@@ -30,7 +32,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
-    public User login(LoginRequest request) {
+    public String login(LoginRequest request) {
 
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
@@ -39,7 +41,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("Invalid credentials");
         }
 
-        return user;
+        return jwtUtil.generateToken(user.getEmail());
     }
 
 }
