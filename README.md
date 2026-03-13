@@ -118,18 +118,25 @@ Consumers:
 
 ---
 
+## Architecture Diagrams
+
+System Architecture
+See: architecture/diagrams/system-architecture.md
+
+Microservices Communication
+See: architecture/diagrams/microservices-flow.md
+
+Kafka Event Flow
+See: architecture/diagrams/kafka-event-flow.md
+
+Database Design
+See: architecture/diagrams/database-er-diagram.md
+
+---
+
 ## Future Improvements
 
 * WebSocket real-time notifications
 * Mobile application
 * CI/CD pipeline
-
-## Architecture Documentation
-
-Detailed architecture documents are available in the `architecture` directory.
-
-* System Architecture
-* Microservices Communication
-* Kafka Event Flow
-* Database Design
 
