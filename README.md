@@ -124,3 +124,12 @@ Consumers:
 * Mobile application
 * CI/CD pipeline
 
+## Architecture Documentation
+
+Detailed architecture documents are available in the `architecture` directory.
+
+* System Architecture
+* Microservices Communication
+* Kafka Event Flow
+* Database Design
+
