@@ -1,0 +1,8 @@
+Tables
+
+users
+expenses
+expense_participants
+balances
+notifications
+spending_summary
