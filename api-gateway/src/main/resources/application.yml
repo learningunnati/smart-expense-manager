@@ -17,4 +17,4 @@ spring:
         - id: expense-service
           uri: http://localhost:8082
           predicates:
-            - Path=/expenses/**
+            - Path=/expenses/**,/balances/**

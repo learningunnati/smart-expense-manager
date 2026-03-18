@@ -46,4 +46,10 @@ public class ExpenseService {
         return savedExpense;
     }
 
+    @Cacheable(value = "balances", key = "#userId")
+    public List<UserBalance> getUserBalance(Long userId) {
+
+        return userBalanceRepository.findByUserId(userId);
+
+    }
 }
